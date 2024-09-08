@@ -1,41 +1,38 @@
-Project Decisions and Assumptions
-
-1. Project Structure:
-   - Decision: Two separate projects - a landing page and a weather app.
-   - Reasoning: This was a task requirement. It allows for separation of concerns and independent development/deployment of each component.
+1. Structure of the Project:
+   - Decision: Two distinct projects: a landing page and a weather application.
+   - Reasoning: This was a task requirement. Separating the two projects ensures separation of concerns and allows each to be independently developed and deployed.
 
 2. Technology Stack:
-   - Landing Page: Pure JavaScript (TypeScript), Webpack
-   - Weather App: React
-   - Reasoning: The landing page using pure JavaScript was a task requirement. We chose TypeScript for better type safety and developer experience. React for the weather app allows for efficient UI updates and component-based architecture.
+   - Landing Page: Pure JavaScript (TypeScript) in addition with Webpack
+   - Weather Application: React;  Reasoning: Pure JavaScript to build the landing page was a task requirement. TypeScript provides better type safety and developer-friendly experience. React enables efficient UI updates and component-based application.
 
-3. Weather API:
+3. API for Weather:
    - Decision: Use OpenWeatherMap API
-   - Reasoning: This was specified in the task requirements. OpenWeatherMap provides reliable weather data and has a free tier suitable for this project.
+   - Reasoning: This was specified as part of the project requirements. OpenWeatherMap is a reliable source of weather information, and has a free version that works for this project.
 
 4. Styling:
-   - Decision: Use Tailwind CSS
-   - Reasoning: Tailwind provides utility-first CSS, allowing for rapid UI development and consistent styling across both projects.
+   - Decision: Using Tailwind CSS 
+   - Reasoning: Tailwond CSS provides utility-first css, which allows a consistent styling, and speeds up UI development in each project.
 
-5. Build and Bundling:
-   - Decision: Use Webpack for the landing page, Create React App for the weather app
-   - Reasoning: Webpack provides powerful bundling capabilities for the custom JS/TS setup. Create React App offers a pre-configured environment for React development.
+5. Build / Bundling:
+   - Decision: Use Webpack/tooling for the landing page & Create React App + Webpack for the weather application.
+   - Reasoning: Webpack provides a powerful bundling experience for the custom JS/TS setup of the landing page. Create React App creates a frictionless experience for React and accommodates Webpack behind the scenes.
 
-6. Weather App Integration:
-   - Decision: Load the weather app in an iframe within the landing page
-   - Reasoning: This allows for complete separation of the two apps while still enabling them to be displayed together. It also simplifies cross-origin issues.
+6. Weather Application Integration:
+   - Decision: Embed the weather application in an iframe in the landing page.
+   - Reasoning: This gives an ability to completely separate both applications, but gives the usability of viewing the web applications next too each other, overcoming some cross-origin issues.
 
 7. Geolocation:
-   - Decision: Use browser's Geolocation API with a fallback to IP-based geolocation
-   - Reasoning: Browser geolocation provides accurate results when available. The fallback ensures functionality even if the user denies location access.
+   - Decision: Use the browser's Geolocation API, serving accuracy when possible, and a fallback implementation based on the geolocation from the ip address itself.
+   - Reasoning: Whenever the browser can use geolocation, this provides the most accurate result possible. This was also a task requirement. The fallback from the ip address makes our product usable even when the geolocation is denied by the user.
 
 8. State Management:
-   - Decision: Use React's built-in state management (useState, useEffect)
-   - Reasoning: For a small-scale app, React's built-in state management is sufficient and reduces complexity.
+   - Decision: Use react’s built-in state (ex: useState, useEffect).
+   - Reasoning: In the scope of a small-scale application, using react's built-in state is sufficient state management for a small application.  React's built-in state also reduces complexity.
 
-9. Testing:
-   - Decision: Implement unit tests and end-to-end tests
-   - Reasoning: This was a task requirement. Unit tests ensure individual components work correctly, while e2e tests validate the overall user experience.
+9. Testing;
+   - Decision: Implement unit tests and end-to-end tests. 
+   - Reasoning: This was part of the task requirement, and unit testing ensures that each component works consistently. End-to-end tests identify bugs during interactions. 
 
 10. Deployment:
     - Decision: Use GitHub for version control and Firebase for hosting

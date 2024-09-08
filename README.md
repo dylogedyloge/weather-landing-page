@@ -38,17 +38,17 @@ This project consists of two parts: a landing page and a weather application. Th
 1. Clone the repositories:
 
    ```bash
-   git clone https://github.com/your-username/landing-page-repo.git
-   git clone https://github.com/your-username/weather-app-repo.git
+   git clone https://github.com/dylogedyloge/weather-landing-page.git
+   git clone https://github.com/dylogedyloge/weather-app.git
    ```
 
 2. Install dependencies for both projects:
 
    ```bash
-   cd landing-page-repo
+   cd landing-page
    npm install
 
-   cd ../weather-app-repo
+   cd ../weather-app
    npm install
    ```
 
@@ -63,14 +63,14 @@ This project consists of two parts: a landing page and a weather application. Th
 1. Start the landing page:
 
    ```bash
-   cd landing-page-repo
+   cd landing-page
    npm start
    ```
 
 2. In a new terminal, start the weather app:
 
    ```bash
-   cd weather-app-repo
+   cd weather-app
    npm start
    ```
 
@@ -83,13 +83,13 @@ Both projects include unit tests and end-to-end tests.
 To run tests for the landing page:
 
 ````bash
-cd landing-page-repo
+cd landing-page
 npm test
 
 To run tests for the weather app:
 
 ```bash
-cd weather-app-repo
+cd weather-app
 npm test
 ````
 
@@ -99,12 +99,12 @@ Both projects are deployed on Firebase Hosting using GitHub Actions. The deploym
 
 ## Project Structure
 
-- landing-page-repo/: Contains the landing page project
+- landing-page-/: Contains the landing page project
 - src/: Source files
 - dist/: Built files (created when building the project)
 - webpack.config.js: Webpack configuration
 - .github/workflows/: GitHub Actions workflow files
-- weather-app-repo/: Contains the weather app project
+- weather-app/: Contains the weather app project
 - src/: Source files
 - public/: Public assets
 - build/: Built files (created when building the project)
