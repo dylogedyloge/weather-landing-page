@@ -96,7 +96,7 @@ function loadWeatherApp(latitude: number, longitude: number) {
   document.body.appendChild(weatherAppContainer);
 
   const iframe = document.createElement("iframe");
-  iframe.src = `http://localhost:3000?lat=${latitude}&lon=${longitude}`;
+  iframe.src = `https://react-weather-app-115-2ddd0.web.app/?lat=${latitude}&lon=${longitude}`;
   iframe.style.width = "100%";
   iframe.style.height = "100%";
   iframe.style.border = "none";
