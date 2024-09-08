@@ -128,11 +128,43 @@ function handleWeatherUpdate(event: MessageEvent) {
     const weatherInfo = document.getElementById("weatherInfo");
     if (weatherInfo) {
       weatherInfo.innerHTML = `
-        <p>Last updated: ${new Date().toLocaleString()}</p>
-        <p>Temperature: ${event.data.temperature}°C</p>
-        <p>Condition: ${event.data.condition}</p>
+        <div class="bg-white rounded-lg shadow-md p-6 mt-4">
+          <p class="text-sm text-gray-500 mb-2">Last updated: ${new Date().toLocaleString()}</p>
+          <div class="flex items-center justify-between">
+            <div>
+              <p class="text-3xl font-bold text-gray-800">${
+                event.data.temperature
+              }°C</p>
+              <p class="text-lg text-gray-600 capitalize">${
+                event.data.condition
+              }</p>
+            </div>
+            <div class="text-5xl">
+              ${getWeatherIcon(event.data.condition)}
+            </div>
+          </div>
+        </div>
       `;
     }
+  }
+}
+
+function getWeatherIcon(condition: string): string {
+  // This is a simple example. You might want to expand this based on more weather conditions
+  const lowercaseCondition = condition.toLowerCase();
+  if (
+    lowercaseCondition.includes("sun") ||
+    lowercaseCondition.includes("clear")
+  ) {
+    return "☀️";
+  } else if (lowercaseCondition.includes("cloud")) {
+    return "☁️";
+  } else if (lowercaseCondition.includes("rain")) {
+    return "🌧️";
+  } else if (lowercaseCondition.includes("snow")) {
+    return "❄️";
+  } else {
+    return "🌤️";
   }
 }
 
