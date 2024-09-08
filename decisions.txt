@@ -1,0 +1,64 @@
+Project Decisions and Assumptions
+
+1. Project Structure:
+   - Decision: Two separate projects - a landing page and a weather app.
+   - Reasoning: This was a task requirement. It allows for separation of concerns and independent development/deployment of each component.
+
+2. Technology Stack:
+   - Landing Page: Pure JavaScript (TypeScript), Webpack
+   - Weather App: React
+   - Reasoning: The landing page using pure JavaScript was a task requirement. We chose TypeScript for better type safety and developer experience. React for the weather app allows for efficient UI updates and component-based architecture.
+
+3. Weather API:
+   - Decision: Use OpenWeatherMap API
+   - Reasoning: This was specified in the task requirements. OpenWeatherMap provides reliable weather data and has a free tier suitable for this project.
+
+4. Styling:
+   - Decision: Use Tailwind CSS
+   - Reasoning: Tailwind provides utility-first CSS, allowing for rapid UI development and consistent styling across both projects.
+
+5. Build and Bundling:
+   - Decision: Use Webpack for the landing page, Create React App for the weather app
+   - Reasoning: Webpack provides powerful bundling capabilities for the custom JS/TS setup. Create React App offers a pre-configured environment for React development.
+
+6. Weather App Integration:
+   - Decision: Load the weather app in an iframe within the landing page
+   - Reasoning: This allows for complete separation of the two apps while still enabling them to be displayed together. It also simplifies cross-origin issues.
+
+7. Geolocation:
+   - Decision: Use browser's Geolocation API with a fallback to IP-based geolocation
+   - Reasoning: Browser geolocation provides accurate results when available. The fallback ensures functionality even if the user denies location access.
+
+8. State Management:
+   - Decision: Use React's built-in state management (useState, useEffect)
+   - Reasoning: For a small-scale app, React's built-in state management is sufficient and reduces complexity.
+
+9. Testing:
+   - Decision: Implement unit tests and end-to-end tests
+   - Reasoning: This was a task requirement. Unit tests ensure individual components work correctly, while e2e tests validate the overall user experience.
+
+10. Deployment:
+    - Decision: Use GitHub for version control and Firebase for hosting
+    - Reasoning: GitHub provides robust version control and CI/CD capabilities. Firebase offers simple, fast hosting for web applications.
+
+11. Automated Deployment:
+    - Decision: Use GitHub Actions for CI/CD
+    - Reasoning: This was a task requirement. GitHub Actions integrates seamlessly with our GitHub repositories and allows for automated building and deployment to Firebase.
+
+12. Error Handling:
+    - Decision: Implement error boundaries in React and try-catch blocks in critical areas
+    - Reasoning: This improves app stability and provides a better user experience by gracefully handling potential errors.
+
+13. Responsive Design:
+    - Decision: Implement responsive design using Tailwind CSS
+    - Reasoning: Ensures the application is usable across various device sizes and types.
+
+14. Code Quality:
+    - Decision: Use ESLint and Prettier
+    - Reasoning: Maintains consistent code style and helps catch potential errors early in development.
+
+15. Performance Optimization:
+    - Decision: Implement lazy loading for the weather app iframe
+    - Reasoning: Improves initial load time of the landing page by deferring the loading of the weather app until it's needed.
+
+These decisions were made to fulfill the project requirements while also considering best practices in web development, user experience, and maintainability.
